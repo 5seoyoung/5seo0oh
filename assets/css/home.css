@@ -1,0 +1,212 @@
+/* ==========================================================================
+   home.css — styles unique to the home page (index.html)
+   Loads AFTER base.css.
+   ========================================================================== */
+
+/* ---------- identity ---------- */
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 0;
+}
+
+.avatar {
+  width: 76px;
+  height: 76px;
+  flex: none;
+  border-radius: 10px;
+  object-fit: cover;
+  /* full-body photo: bias the crop downward so feet show, not the sky */
+  object-position: 50% 88%;
+  background: var(--tint);
+  border: 1px solid var(--rule);
+  display: block;
+}
+
+.avatar.mono {
+  display: grid;
+  place-items: center;
+  font-size: 27px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--soft);
+  user-select: none;
+}
+
+.who { min-width: 0; }
+
+h1 {
+  font-size: 31px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.role {
+  margin: 9px 0 0;
+  font-size: 15px;
+  color: var(--soft);
+  letter-spacing: -0.01em;
+}
+
+/* ---------- social icons ---------- */
+
+.icons {
+  display: flex;
+  gap: 6px;
+  flex: none;
+  margin-top: 22px;
+}
+
+.icons a {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  color: var(--soft);
+  transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
+}
+
+.icons a:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+  background: var(--tint);
+}
+
+.icons a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.icons svg { width: 15px; height: 15px; fill: currentColor; display: block; }
+
+/* ---------- bio ---------- */
+
+.bio {
+  margin: 30px 0 0;
+  color: var(--soft);
+  text-wrap: pretty;
+}
+
+.bio .opening { color: var(--ink); }
+
+/* ---------- currently / affiliation ---------- */
+
+.now { margin: 0; }
+
+.now-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.now-top .label,
+.now-top .when {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+  white-space: nowrap;
+}
+
+.now-top .leader {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.now-body {
+  margin: 11px 0 0;
+  font-size: 15.5px;
+  line-height: 1.5;
+  letter-spacing: -0.012em;
+}
+
+.now-body .title { font-weight: 500; }
+.now-body .org { display: block; color: var(--soft); }
+
+/* ---------- section nav ---------- */
+
+.sections {
+  margin: 48px 0 0;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 30px;
+}
+
+.sec {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.014em;
+  color: var(--soft);
+  background-image: linear-gradient(var(--ink), var(--ink));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: color 150ms ease, background-size 240ms cubic-bezier(.22,.61,.36,1);
+}
+
+.sec:hover { color: var(--ink); background-size: 100% 1px; }
+.sec:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* ---------- details list ---------- */
+
+.details {
+  margin: 34px 0 0;
+  font-size: 13.5px;
+}
+
+.details > div {
+  padding: 11px 0;
+  border-top: 1px solid var(--rule);
+}
+.details > div:last-child { border-bottom: 1px solid var(--rule); }
+
+.details dt {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.details dd {
+  margin: 3px 0 0;
+  color: var(--ink);
+}
+
+.details dd .note { color: var(--faint); }
+
+.details dd a {
+  background-image: linear-gradient(var(--faint), var(--faint));
+  background-repeat: no-repeat;
+  background-position: 0 92%;
+  background-size: 100% 1px;
+  transition: background-size 180ms ease;
+}
+.details dd a:hover { background-size: 0% 1px; }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 860px) {
+  .side { padding-bottom: 36px; border-bottom: 1px solid var(--rule); }
+  .identity { flex-direction: row; align-items: center; gap: 16px; }
+  .avatar { width: 64px; height: 64px; }
+  .avatar.mono { font-size: 23px; }
+  h1 { font-size: 30px; }
+  .icons { margin-top: 22px; }
+  .details { max-width: 360px; }
+}
+
+@media (max-width: 560px) {
+  h1 { font-size: 28px; }
+  .avatar { width: 58px; height: 58px; }
+  .sections { gap: 8px 22px; }
+}

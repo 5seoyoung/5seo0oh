@@ -1,0 +1,107 @@
+/* ==========================================================================
+   base.css — shared foundation for every page
+   Design tokens (colours, fonts), reset, page layout, footer, animations.
+   Change a colour or font HERE and it updates the whole site.
+   ========================================================================== */
+
+:root {
+  --bg: #FFFFFF;
+  --tint: #F6F6F5;
+  --ink: #0C0D0C;
+  --soft: #767873;
+  --faint: #A8AAA5;
+  --rule: #E7E7E4;
+
+  --sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0C0D0C;
+    --tint: #171917;
+    --ink: #EDEEEC;
+    --soft: #8D8F8A;
+    --faint: #5C5E5A;
+    --rule: #232522;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: -0.006em;
+}
+
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--ink); color: var(--bg); }
+
+/* ---------- page layout ---------- */
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 100px 40px 72px;
+  display: grid;
+  grid-template-columns: 236px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.side { position: sticky; top: 100px; }
+.content { min-width: 0; }
+
+/* ---------- footer ---------- */
+
+footer {
+  margin-top: 44px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--faint);
+  letter-spacing: 0.03em;
+}
+
+/* ---------- load-in animation ---------- */
+
+.fade { opacity: 0; animation: in 700ms cubic-bezier(.22,.61,.36,1) forwards; }
+.fade:nth-child(1) { animation-delay: 40ms; }
+.fade:nth-child(2) { animation-delay: 90ms; }
+.fade:nth-child(3) { animation-delay: 140ms; }
+.fade:nth-child(4) { animation-delay: 190ms; }
+.fade:nth-child(5) { animation-delay: 240ms; }
+.fade:nth-child(6) { animation-delay: 290ms; }
+.fade:nth-child(7) { animation-delay: 340ms; }
+.fade:nth-child(8) { animation-delay: 390ms; }
+
+@keyframes in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade { animation: none; opacity: 1; }
+  * { transition-duration: 1ms !important; }
+}
+
+/* ---------- responsive: collapse to single column ---------- */
+
+@media (max-width: 860px) {
+  .page {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 72px 26px 56px;
+    max-width: 620px;
+  }
+  .side {
+    position: static;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page { padding: 56px 22px 52px; }
+}
