@@ -1,6 +1,6 @@
 /* ==========================================================================
-   section.css — styles unique to the section pages
-   (experience / publications / projects / awards / press)
+   section.css - styles unique to the section pages
+   (experience / publications / projects / awards)
    Loads AFTER base.css.
    ========================================================================== */
 
@@ -77,16 +77,14 @@ h1 {
 .entries { margin: 0; }
 
 .entry {
-  padding: 26px 0;
-  border-top: 1px solid var(--rule);
+  padding: 14px 0;
 }
-.entry:last-of-type { border-bottom: 1px solid var(--rule); }
 
 .entry-top {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 11px;
+  margin-bottom: 7px;
 }
 
 .entry-top .when {
@@ -112,6 +110,21 @@ h1 {
   line-height: 1.4;
 }
 
+.entry-tag {
+  display: inline-block;
+  margin-left: 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faint);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 1px 6px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
 .entry-org {
   margin: 3px 0 0;
   color: var(--soft);
@@ -125,7 +138,7 @@ h1 {
 }
 
 .entry-links {
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   display: flex;
   flex-wrap: wrap;
   gap: 8px 18px;

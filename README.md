@@ -13,10 +13,9 @@ python3 -m http.server 8000   # then open http://localhost:8000
 .
 ├── index.html            # Home page
 ├── experience.html       # ┐
-├── publications.html     # │
-├── projects.html         # ├─ Section pages (one per nav button)
-├── awards.html           # │
-├── press.html            # ┘
+├── publications.html     # ├─ Section pages (one per nav button)
+├── projects.html         # │
+├── awards.html           # ┘
 ├── assets/
 │   ├── css/
 │   │   ├── base.css      # Design tokens (colours/fonts), layout, animation — shared by ALL pages
@@ -43,7 +42,7 @@ block. Each entry has:
 - `.entry-links` → optional links (Paper, Code, Demo, …)
 
 **Add a brand-new section (new nav button)**
-1. Copy an existing section page (e.g. `press.html`) to `newsection.html`.
+1. Copy an existing section page (e.g. `awards.html`) to `newsection.html`.
 2. Update its `<title>`, the `<h1>`, and mark its own link `class="on"` in the `.subnav`.
 3. Add the same link to the `.subnav` of every other section page.
 4. Add `<a class="sec" href="newsection.html">New Section</a>` to the `.sections` nav in `index.html`.
