@@ -137,6 +137,33 @@ h1 {
   text-wrap: pretty;
 }
 
+.entry-list {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entry-list li {
+  position: relative;
+  padding-left: 15px;
+  margin: 4px 0;
+  color: var(--soft);
+  font-size: 14px;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.entry-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.7em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--faint);
+}
+
 .entry-links {
   margin: 8px 0 0;
   display: flex;
@@ -157,6 +184,52 @@ h1 {
   transition: color 150ms ease, background-size 180ms ease;
 }
 .entry-links a:hover { color: var(--ink); background-size: 0% 1px; }
+
+/* ---------- who i am (about) ---------- */
+
+.about-photo {
+  margin: 0 0 30px;
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: var(--tint);
+  border: 1px solid var(--rule);
+}
+
+.about-body {
+  max-width: 62ch;
+}
+
+.about-body p {
+  margin: 0 0 16px;
+  color: var(--soft);
+  text-wrap: pretty;
+}
+.about-body p:first-child { color: var(--ink); }
+.about-body p:last-child { margin-bottom: 0; }
+
+.about-tags {
+  margin: 26px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-tags span {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--soft);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 4px 10px;
+}
 
 /* ---------- responsive ---------- */
 

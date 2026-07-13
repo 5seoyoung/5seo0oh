@@ -12,7 +12,8 @@ python3 -m http.server 8000   # then open http://localhost:8000
 ```
 .
 ├── index.html            # Home page
-├── experience.html       # ┐
+├── about.html            # ┐  "Who I Am" — intro + photo
+├── experience.html       # │
 ├── publications.html     # ├─ Section pages (one per nav button)
 ├── projects.html         # │
 ├── awards.html           # ┘
