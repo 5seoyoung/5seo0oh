@@ -187,48 +187,124 @@ h1 {
 
 /* ---------- who i am (about) ---------- */
 
-.about-photo {
-  margin: 0 0 30px;
+/* photo floats left; the chapter button sits beside it and, when opened,
+   the story flows alongside the photo and continues full width below it */
+.uni::after { content: ""; display: block; clear: both; }
+
+.uni-photo {
+  float: left;
+  width: 300px;
+  margin: 0 34px 22px 0;
 }
 
-.about-photo img {
+.uni-photo img {
   display: block;
   width: 100%;
-  max-width: 320px;
-  border-radius: 12px;
+  border-radius: 14px;
   object-fit: cover;
   background: var(--tint);
   border: 1px solid var(--rule);
 }
 
-.about-body {
-  max-width: 62ch;
+.chapter { margin: 0 0 14px; }
+.chapter:last-child { margin-bottom: 0; }
+
+/* hide the photo once a chapter is opened, so the story reads full width */
+.uni:has(.chapter[open]) .uni-photo { display: none; }
+
+/* each chapter is a clickable pill that reveals its story when opened */
+.chapter summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 12px 20px;
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  cursor: pointer;
+  list-style: none;
+  transition: border-color 150ms ease, background 150ms ease;
 }
 
-.about-body p {
-  margin: 0 0 16px;
-  color: var(--soft);
-  text-wrap: pretty;
-}
-.about-body p:first-child { color: var(--ink); }
-.about-body p:last-child { margin-bottom: 0; }
-
-.about-tags {
-  margin: 26px 0 0;
+.chapter-head {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  gap: 2px;
+}
+.chapter summary::-webkit-details-marker { display: none; }
+.chapter summary::marker { content: ""; }
+
+.chapter summary:hover { border-color: var(--ink); background: var(--tint); }
+.chapter summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.chapter[open] summary { border-color: var(--ink); }
+
+.chapter-title {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.014em;
+  color: var(--ink);
 }
 
-.about-tags span {
+.chapter-date {
+  font-size: 13px;
+  color: var(--soft);
+}
+
+.chapter-body {
+  margin: 18px 0 0;
+  color: var(--soft);
+}
+.chapter-body p { margin: 0 0 15px; text-align: justify; }
+.chapter-body p:last-child { margin-bottom: 0; }
+
+.chapter-sub {
+  margin: 28px 0 12px;
+  font-size: 15.5px;
+  font-weight: 500;
+  letter-spacing: -0.014em;
+  color: var(--ink);
+}
+
+.chapter-fig {
+  margin: 22px 0;
+}
+
+.chapter-fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--rule);
+  background: var(--tint);
+}
+
+.chapter-cite {
+  margin: 0 0 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--rule);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--faint);
+}
+
+.chapter-written {
+  align-self: center;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 10.5px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--soft);
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-  padding: 4px 10px;
+  color: var(--faint);
+  white-space: nowrap;
+}
+
+@media (max-width: 620px) {
+  .uni-photo {
+    float: none;
+    width: auto;
+    max-width: 320px;
+    margin: 0 0 24px;
+  }
 }
 
 /* ---------- responsive ---------- */
