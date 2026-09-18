@@ -95,7 +95,7 @@ h1 {
 
 /* ---------- currently / affiliation ---------- */
 
-.now { margin: 0; }
+.now { margin: 40px 0 0; }
 
 .now-top {
   display: flex;
@@ -132,9 +132,8 @@ h1 {
 /* ---------- section nav ---------- */
 
 .sections {
-  margin: 48px 0 0;
-  padding: 16px 0;
-  border-top: 1px solid var(--rule);
+  margin: 0;
+  padding: 0 0 16px;
   border-bottom: 1px solid var(--rule);
   display: flex;
   flex-wrap: wrap;
