@@ -1,0 +1,46 @@
+/* ==========================================================================
+   about.css - styles unique to the Who I Am essay (about.html)
+   Loads AFTER base.css.
+   ========================================================================== */
+
+.essay h2 { margin-top: 28px; }
+
+.essay-meta {
+  margin: 2px 0 0;
+  font-size: 14px;
+  color: var(--soft);
+}
+
+.chapter-body { margin: 24px 0 0; }
+.chapter-body p { margin: 0 0 16px; text-align: justify; }
+.chapter-body p:last-child { margin-bottom: 0; }
+
+.chapter-sub {
+  margin: 36px 0 12px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.chapter-fig { margin: 24px 0; }
+
+.chapter-fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+}
+
+.chapter-cite {
+  margin: 0 0 12px;
+  padding-left: 14px;
+  border-left: 2px solid var(--rule);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--soft);
+}
+
+@media (max-width: 560px) {
+  .chapter-body p { text-align: left; }
+}
