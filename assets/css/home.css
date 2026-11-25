@@ -30,70 +30,6 @@
 .links a:hover { color: var(--ink); }
 .links svg { display: block; width: 26px; height: 26px; fill: currentColor; }
 
-/* ---------- sections ---------- */
-
-.block { margin-top: 52px; }
-
-.block-sub {
-  margin: 26px 0 0;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--soft);
-}
-
-/* ---------- entries: date on the left, details on the right ---------- */
-
-.entry {
-  display: grid;
-  grid-template-columns: 148px minmax(0, 1fr);
-  gap: 0 16px;
-  margin-top: 18px;
-}
-
-.when {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--soft);
-  font-variant-numeric: tabular-nums;
-}
-
-.entry-title {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.entry-org {
-  margin: 0;
-  font-size: 15px;
-  color: var(--soft);
-}
-
-.entry-org strong { font-weight: 500; color: var(--ink); }
-
-.entry-desc {
-  margin: 6px 0 0;
-  font-size: 15px;
-  color: var(--soft);
-  text-wrap: pretty;
-}
-
-.entry-list {
-  margin: 6px 0 0;
-  padding-left: 18px;
-  font-size: 15px;
-  color: var(--soft);
-}
-
-.entry-links {
-  margin: 2px 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 14px;
-  font-size: 15px;
-}
-
 /* ---------- responsive ---------- */
 
 @media (max-width: 560px) {
@@ -106,6 +42,4 @@
     object-position: 50% 25%;
   }
   .intro p:not(.role) { clear: both; text-align: left; }
-  .block { margin-top: 40px; }
-  .entry { grid-template-columns: minmax(0, 1fr); }
 }

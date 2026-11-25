@@ -1,0 +1,77 @@
+/* ==========================================================================
+   section.css - styles for the list pages
+   (publications / awards / projects)
+   Loads AFTER base.css.
+   ========================================================================== */
+
+h1 + .entry { margin-top: 28px; }
+
+/* ---------- sub headings ---------- */
+
+.block-sub {
+  margin: 28px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: normal;
+  color: var(--soft);
+}
+
+/* ---------- entries: date on the left, details on the right ---------- */
+
+.entry {
+  display: grid;
+  grid-template-columns: 148px minmax(0, 1fr);
+  gap: 0 16px;
+  margin-top: 18px;
+}
+
+.when {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.entry-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 1.5;
+}
+
+.entry-org {
+  margin: 0;
+  font-size: 15px;
+  color: var(--soft);
+}
+
+.entry-org strong { font-weight: 500; color: var(--ink); }
+
+.entry-desc {
+  margin: 6px 0 0;
+  font-size: 15px;
+  color: var(--soft);
+  text-wrap: pretty;
+}
+
+.entry-list {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-size: 15px;
+  color: var(--soft);
+}
+
+.entry-links {
+  margin: 2px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 14px;
+  font-size: 15px;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 560px) {
+  .entry { grid-template-columns: minmax(0, 1fr); }
+}
